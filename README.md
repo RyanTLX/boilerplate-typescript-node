@@ -1,36 +1,54 @@
-# TypeScript Node Boiletplate
+# TypeScript Node Boilerplate
 
 ## Git
 
 Initialise Git Repository
 
-`mkdir <project name> && cd "$_"`
+```
+mkdir <project name> && cd "$_"
+```
 
-`git init`
+```
+git init
+```
 
 Add .gitignore file
 
 https://www.toptal.com/developers/gitignore?templates=windows,macos,visualstudiocode,node or
 
-`curl https://www.toptal.com/developers/gitignore/api/node,macos,windows,visualstudiocode > gitignore.txt`
+```
+curl https://www.toptal.com/developers/gitignore/api/node,macos,windows,visualstudiocode > .gitignore
+```
 
 ## NPM
 
-`npm init`
+```
+npm init
+```
 
 ## TypeScript
 
 Install dependencies
 
-`npm install -D typescript @types/node ts-node`
+```
+npm install -D typescript @types/node ts-node
+```
 
 Generate tsconfig file
 
-`npx tsc --init` or
+```
+npx tsc --init
+```
 
-`touch tsconfig.json` and paste:
+or
 
-```json
+```
+touch tsconfig.json
+```
+
+and paste:
+
+``` json
 {
   "compilerOptions": {
     "target": "ES2015",
@@ -57,34 +75,57 @@ Generate tsconfig file
 
 Add to package.json scripts
 
-```json
+``` json
 "build": "rm -rf dist && tsc",
 "dev": "ts-node src"
 ```
 
 Create `src/index.ts` and print Hello World!
+```
+mkdir src && echo "console.log(\"Hello World\!\");" > src/index.ts
+```
 
 ## Jest
 
 Install dependency
 
-`npm install -D jest @types/jest ts-jest`
+```
+npm install -D jest @types/jest ts-jest
+```
 
 Configure TypeScript transpiler for Jest
 
-`npx ts-jest config:init`
+```
+npx ts-jest config:init
+```
+
+Create dummy test file
+
+```
+touch src/index.test.ts
+```
+
+``` TypeScript
+describe("Main", () => {
+    it("should return true", () => {
+        expect(1+1).toBe(2);
+    });
+})
+```
 
 Add to package.json scripts
 
-```json
-"test": "jest --silent",
+``` json
+"test": "jest --silent"
 ```
 
 ## ESLint
 
 Install dependency
 
-`npm init @eslint/config`
+```
+npm init @eslint/config
+```
 
 Add to package.json scripts
 
@@ -97,7 +138,9 @@ Add to package.json scripts
 
 Install dependencies
 
-`npm install -D prettier eslint-config-prettier`
+```
+npm install -D prettier eslint-config-prettier
+```
 
 Add extension to eslintrc
 
@@ -109,7 +152,9 @@ Add prettier config and ignore
 
 https://prettier.io/docs/en/options
 
-.prettierrc.json
+```
+touch .prettierrc.json
+```
 
 ``` json
 {
@@ -118,7 +163,9 @@ https://prettier.io/docs/en/options
 }
 ```
 
-.prettierignore
+```
+touch .prettierignore
+```
 
 ```
 node_modules
