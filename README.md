@@ -77,6 +77,7 @@ Add to package.json scripts
 
 ``` json
 "build": "rm -rf dist && tsc",
+"app": "node dist/index.js",
 "dev": "ts-node src"
 ```
 
@@ -171,4 +172,10 @@ touch .prettierignore
 node_modules
 dist
 coverage
+```
+
+Add to package.json scripts
+
+``` json
+"format": "prettier src --write"
 ```
